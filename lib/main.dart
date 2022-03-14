@@ -1,3 +1,4 @@
+import 'package:app_sim/core/app_router.dart';
 import 'package:app_sim/presentation/screens/onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,8 +9,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: OnBoardingPage(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: OnBoardingPage.routeName,
+      title: "simlimites",
     );
   }
 }
